@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O Guia Definitivo de Argumentação Política</title>
+  <meta name="description" content="Um guia visual e prático para organizar argumentos, checar fontes, reconhecer falácias e debater política com lógica, clareza e respeito." />
+  <meta property="og:title" content="O Guia Definitivo de Argumentação Política" />
+  <meta property="og:description" content="Argumente com lógica, fontes e respeito. Um guia visual de 42 páginas para conversas políticas mais claras e responsáveis." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/capa-ebook.png" />
+  <meta name="theme-color" content="#071317" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23071317'/%3E%3Cpath d='M12 47h40M18 43V28h28v15M15 28h34L32 15 15 28zM24 31v9M32 31v9M40 31v9' stroke='%23caa66a' stroke-width='3' fill='none'/%3E%3C/svg%3E" />
+  <style>
+    :root{
+      --bg:#061115;
+      --bg-2:#0a1a1b;
+      --panel:#0c2320;
+      --panel-2:#102a24;
+      --ink:#f3ead7;
+      --muted:#b9ad96;
+      --gold:#d0aa68;
+      --gold-2:#edd59f;
+      --line:rgba(208,170,104,.28);
+      --ok:#b9c69a;
+      --max:1180px;
+      --radius:22px;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    button,a{touch-action:manipulation}
+    .shell{width:min(calc(100% - 36px),var(--max));margin-inline:auto}
+    .eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2);font-weight:800}
+    .eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:var(--gold);vertical-align:middle;margin-right:10px}
+    h1,h2,h3{font-family:var(--serif);line-height:1.02;margin:0;color:#f5ebd4}
+    h1{font-size:clamp(2.7rem,8vw,6.4rem);letter-spacing:-.045em}
+    h2{font-size:clamp(2.1rem,5vw,4.3rem);letter-spacing:-.035em}
+    h3{font-size:clamp(1.3rem,2.4vw,1.8rem)}
+    p{margin:0;color:var(--muted);font-size:1.04rem}
+    strong{color:var(--ink)}
+    .section{padding:92px 0;border-top:1px solid rgba(208,170,104,.09)}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;border-radius:999px;background:var(--gold);color:#15120d;text-decoration:none;font-weight:900;border:1px solid var(--gold);box-shadow:0 12px 40px rgba(0,0,0,.24);transition:.18s ease;cursor:pointer}
+    .button:hover{transform:translateY(-2px);background:var(--gold-2)}
+    .button:focus-visible,.faq-button:focus-visible{outline:3px solid #fff;outline-offset:4px}
+    .button.secondary{background:transparent;color:var(--gold-2)}
+    .micro{font-size:.84rem;color:#9c927f}
+    .hero{min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:72px 0 54px;background:#061115}
+    .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(208,170,104,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(208,170,104,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 85%);pointer-events:none}
+    .hero::after{content:"";position:absolute;left:50%;bottom:-130px;transform:translateX(-50%);width:520px;height:320px;border:1px solid rgba(208,170,104,.13);border-radius:50%;box-shadow:0 0 120px rgba(208,170,104,.10);pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center;position:relative;z-index:1}
+    .hero-copy{display:grid;gap:24px;max-width:620px}
+    .hero-copy h1 .accent{color:var(--gold-2);display:block}
+    .hero-sub{font-size:clamp(1.08rem,2vw,1.28rem);max-width:620px;color:#d6c9b2}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .book-stage{position:relative;min-height:620px;display:grid;place-items:center}
+    .book-stage::before{content:"";position:absolute;width:82%;height:82%;border:1px solid var(--line);border-radius:50%;box-shadow:inset 0 0 50px rgba(208,170,104,.04)}
+    .book{position:relative;width:min(440px,82vw);transform:perspective(1100px) rotateY(-7deg) rotateX(2deg);filter:drop-shadow(0 34px 26px rgba(0,0,0,.48))}
+    .book img{border-radius:10px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
+    .proof{background:#091918}
+    .section-head{max-width:820px;display:grid;gap:16px;margin-bottom:44px}
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:start}
+    .page-shot{background:#0d201d;border:1px solid var(--line);padding:10px;border-radius:14px;box-shadow:0 22px 46px rgba(0,0,0,.22);transition:.18s ease}
+    .page-shot:nth-child(2),.page-shot:nth-child(4){margin-top:40px}
+    .page-shot:hover{transform:translateY(-5px)}
+    .page-shot img{border-radius:8px;width:100%;height:auto}
+    .statement{padding:74px 0;background:#d1ad70;color:#15120d}
+    .statement .shell{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}
+    .statement h2,.statement p{color:#15120d}
+    .statement p{font-size:1.18rem}
+    .pill{display:inline-flex;width:max-content;padding:7px 12px;border-radius:999px;border:1px solid rgba(21,18,13,.34);font-weight:900;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+    .content-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .content-card{padding:26px;border:1px solid var(--line);border-radius:var(--radius);background:#0a1917;min-height:230px;display:grid;align-content:start;gap:14px}
+    .content-card .num{font-family:var(--serif);font-size:2.2rem;color:var(--gold);opacity:.9}
+    .content-card p{font-size:.96rem}
+    .method-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center}
+    .method-image{position:relative}
+    .method-image img{border-radius:18px;border:1px solid var(--line);box-shadow:0 28px 50px rgba(0,0,0,.28)}
+    .method-image::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid rgba(208,170,104,.2);border-radius:18px;z-index:-1}
+    .method-copy{display:grid;gap:22px}
+    .steps{display:grid;gap:12px;margin-top:4px}
+    .step{display:grid;grid-template-columns:42px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid rgba(208,170,104,.13)}
+    .step:last-child{border-bottom:0}
+    .step b{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:var(--serif)}
+    .step p{font-size:.96rem}
+    .fit{background:#081615}
+    .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .fit-card{padding:32px;border-radius:var(--radius);border:1px solid var(--line);background:#0b1c1a}
+    .fit-card h3{margin-bottom:18px}
+    .fit-card ul{padding-left:20px;margin:0;display:grid;gap:11px;color:#c6baa6}
+    .fit-card.good li::marker{color:var(--gold)}
+    .fit-card.no{opacity:.84}
+    .offer{position:relative;overflow:hidden}
+    .offer-grid{display:grid;grid-template-columns:1fr .9fr;gap:54px;align-items:center}
+    .offer-copy{display:grid;gap:20px}
+    .offer-box{border:1px solid rgba(208,170,104,.5);border-radius:28px;background:#0b1f1c;padding:34px;box-shadow:0 30px 80px rgba(0,0,0,.28)}
+    .offer-box .cover-mini{width:118px;border-radius:8px;border:1px solid var(--line);margin-bottom:20px}
+    .include{list-style:none;padding:0;margin:20px 0 26px;display:grid;gap:10px;color:#d1c6b1}
+    .include li{display:flex;gap:10px}
+    .include li::before{content:"✓";color:var(--gold);font-weight:900}
+    .price-pending{border:1px dashed rgba(237,213,159,.5);padding:14px 16px;border-radius:14px;background:rgba(208,170,104,.06);margin:12px 0 18px;color:#e8d8b8;font-weight:700}
+    .offer-box .button{width:100%}
+    .pending-note{margin-top:10px;text-align:center;color:#9c927f;font-size:.78rem}
+    .faq{background:#091918}
+    .faq-wrap{max-width:820px;margin:0 auto}
+    .faq-item{border-bottom:1px solid rgba(208,170,104,.16)}
+    .faq-button{width:100%;background:none;border:0;color:var(--ink);font:700 1.05rem var(--sans);text-align:left;padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer}
+    .faq-button span:last-child{color:var(--gold);font-size:1.4rem;transition:.18s ease}
+    .faq-answer{display:grid;grid-template-rows:0fr;transition:.22s ease}
+    .faq-answer>div{overflow:hidden}
+    .faq-answer p{padding:0 0 22px}
+    .faq-item.open .faq-answer{grid-template-rows:1fr}
+    .faq-item.open .faq-button span:last-child{transform:rotate(45deg)}
+    footer{padding:34px 0 100px;border-top:1px solid rgba(208,170,104,.10);background:#050e11}
+    footer .shell{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;flex-wrap:wrap}
+    .legal{max-width:760px;font-size:.8rem;color:#766f63}
+    .sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:20;display:none;padding:10px;background:rgba(5,14,17,.93);backdrop-filter:blur(10px);border:1px solid rgba(208,170,104,.25);border-radius:18px;box-shadow:0 14px 50px rgba(0,0,0,.42)}
+    .sticky .button{width:100%;min-height:50px}
+    @media (max-width:900px){
+      .hero{min-height:auto;padding-top:48px}
+      .hero-grid,.statement .shell,.method-grid,.offer-grid{grid-template-columns:1fr}
+      .hero-grid{gap:34px}
+      .book-stage{min-height:520px}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .page-shot:nth-child(2),.page-shot:nth-child(4){margin-top:0}
+      .content-grid{grid-template-columns:repeat(2,1fr)}
+      .statement .shell{gap:24px}
+      .method-image{order:2}
+    }
+    @media (max-width:620px){
+      .shell{width:min(calc(100% - 28px),var(--max))}
+      .section{padding:68px 0}
+      .hero{padding:34px 0 56px}
+      .hero-copy{gap:18px}
+      h1{font-size:clamp(2.7rem,15vw,4.2rem)}
+      .hero-sub{font-size:1.06rem}
+      .hero-actions{display:grid}
+      .hero-actions .button{width:100%}
+      .book-stage{min-height:430px}
+      .book{width:min(320px,78vw)}
+      .gallery{gap:10px}
+      .page-shot{padding:6px}
+      .content-grid,.fit-grid{grid-template-columns:1fr}
+      .content-card{min-height:auto}
+      .offer-box{padding:24px}
+      .sticky{display:block}
+      footer{padding-bottom:92px}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.page-shot,.faq-answer,.faq-button span:last-child{transition:none}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" id="topo">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Guia digital de argumentação política</div>
+          <h1>Argumente com <span class="accent">lógica, fontes e respeito.</span></h1>
+          <p class="hero-sub">Um guia visual para quem quer organizar melhor o raciocínio, reconhecer falácias, verificar números e sustentar uma conversa política sem transformar discordância em hostilidade.</p>
+          <div class="hero-actions">
+            <a class="button js-buy" href="#oferta">Quero acessar o guia</a>
+          </div>
+        </div>
+        <div class="book-stage" aria-label="Capa do produto">
+          <div class="book"><img src="assets/capa-ebook.png" alt="Capa do Guia Definitivo de Argumentação Política" width="1024" height="1536" fetchpriority="high" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof" id="por-dentro">
+      <div class="shell">
+        <div class="section-head">
+          <div class="eyebrow">Prévia do material</div>
+          <h2>Algumas páginas para você ver o estilo do conteúdo.</h2>
+          <p>O material foi construído em páginas visuais, com exemplos, comparações, perguntas de checagem, modelos de resposta e sínteses que ajudam a transformar conceitos abstratos em critérios práticos.</p>
+        </div>
+        <div class="gallery" aria-label="Prévia de páginas internas">
+          <figure class="page-shot"><img src="assets/page-5.jpg" alt="Página interna sobre fundamentos" loading="lazy" width="1240" height="1754" /></figure>
+          <figure class="page-shot"><img src="assets/page-11.jpg" alt="Página interna sobre falácias e ataque à pessoa" loading="lazy" width="1240" height="1754" /></figure>
+          <figure class="page-shot"><img src="assets/page-19.jpg" alt="Página interna sobre fontes e números" loading="lazy" width="1240" height="1754" /></figure>
+          <figure class="page-shot"><img src="assets/page-37.jpg" alt="Página interna sobre respostas práticas e o método PONTE" loading="lazy" width="1240" height="1754" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="shell">
+        <div>
+          <span class="pill">Princípio central do guia</span>
+          <h2 style="margin-top:18px">Vencer uma discussão não vale perder a verdade.</h2>
+        </div>
+        <p>O objetivo do material não é dar frases prontas para humilhar quem discorda. A proposta é melhorar a qualidade do debate: separar fato, interpretação e valor, pedir a fonte, reconhecer limites e responder à melhor versão do argumento contrário.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div class="eyebrow">O mapa do guia</div>
+          <h2>Da estrutura de um argumento à conversa no WhatsApp.</h2>
+          <p>O conteúdo avança em seis blocos principais para ajudar você a raciocinar melhor antes de responder.</p>
+        </div>
+        <div class="content-grid">
+          <article class="content-card"><div class="num">01</div><h3>Fundamentos</h3><p>Tese, evidência, regra de inferência e conclusão. Como separar fato, interpretação e valor e como lidar com o ônus da prova.</p></article>
+          <article class="content-card"><div class="num">02</div><h3>Falácias</h3><p>Ataque à pessoa, espantalho, falso dilema, apelo emocional, recortes seletivos, mudança de meta e outros desvios comuns.</p></article>
+          <article class="content-card"><div class="num">03</div><h3>Fontes e números</h3><p>Hierarquia de fontes, contexto estatístico, leitura de gráficos, causalidade e o método 2 2 1 para localizar e usar evidências.</p></article>
+          <article class="content-card"><div class="num">04</div><h3>Economia</h3><p>PIB, inflação, trabalho, déficit, dívida e qualidade do gasto. Como evitar conclusões baseadas em um único indicador.</p></article>
+          <article class="content-card"><div class="num">05</div><h3>Segurança e instituições</h3><p>Comparação de indicadores, competências federativas, mecanismos de políticas públicas, separação de Poderes e responsabilidade institucional.</p></article>
+          <article class="content-card"><div class="num">06</div><h3>Respostas práticas</h3><p>O método PONTE, scripts para conversas, organização de discordâncias e critérios claros para saber quando continuar ou encerrar um debate.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:#0a1917">
+      <div class="shell method-grid">
+        <div class="method-image"><img src="assets/page-41.jpg" alt="Página do guia sobre encerrar uma discussão quando o diálogo perde condições" loading="lazy" width="1240" height="1754" /></div>
+        <div class="method-copy">
+          <div class="eyebrow">Firmeza sem hostilidade</div>
+          <h2>Você não precisa responder tudo na hora.</h2>
+          <p>Pedir uma fonte, definir termos, admitir o que ainda precisa ser verificado ou reconhecer um limite pode ser mais convincente do que acumular frases de efeito.</p>
+          <div class="steps">
+            <div class="step"><b>1</b><div><strong>Identifique a afirmação real</strong><p>Antes de contestar, descubra exatamente o que está sendo afirmado.</p></div></div>
+            <div class="step"><b>2</b><div><strong>Procure a evidência</strong><p>Veja a origem, o período, a metodologia e o contexto do dado citado.</p></div></div>
+            <div class="step"><b>3</b><div><strong>Teste a conclusão</strong><p>Pergunte se a evidência realmente sustenta aquilo que se quer concluir.</p></div></div>
+            <div class="step"><b>4</b><div><strong>Responda proporcionalmente</strong><p>Uma boa resposta corrige o ponto sem transformar o interlocutor em inimigo.</p></div></div>
+          </div>
+          <a class="button js-buy" href="#oferta">Quero ter esse método comigo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fit">
+      <div class="shell">
+        <div class="section-head">
+          <div class="eyebrow">Para quem é</div>
+          <h2>Um material para discutir melhor, não para discutir mais.</h2>
+        </div>
+        <div class="fit-grid">
+          <div class="fit-card good">
+            <h3>Faz sentido para você se...</h3>
+            <ul>
+              <li>você participa de conversas políticas e quer sustentar melhor o que diz;</li>
+              <li>quer aprender a conferir números antes de compartilhar;</li>
+              <li>tem dificuldade em identificar onde um argumento falhou;</li>
+              <li>prefere perguntas e fontes a slogans e ataques pessoais;</li>
+              <li>quer uma referência visual para consultar antes ou depois de uma discussão.</li>
+            </ul>
+          </div>
+          <div class="fit-card no">
+            <h3>Não é a proposta se...</h3>
+            <ul>
+              <li>você procura um manual para vencer qualquer conversa a qualquer custo;</li>
+              <li>quer respostas prontas que dispensem pesquisa e checagem;</li>
+              <li>espera que um único guia substitua leitura integral das fontes;</li>
+              <li>busca conteúdo neutro em posicionamento: o próprio material declara uma abordagem conservadora, com compromisso expresso com responsabilidade, prudência e respeito.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell method-grid">
+        <div class="method-copy">
+          <div class="eyebrow">Fontes para conferir</div>
+          <h2>O guia termina indicando onde buscar o dado original.</h2>
+          <p>Em vez de tratar uma postagem ou recorte como ponto final, o material direciona a consulta para fontes oficiais e institucionais em economia, segurança, instituições e checagem.</p>
+          <p>Entre os exemplos citados estão IBGE, Banco Central, Ipea, Ministério da Justiça, Constituição Federal, processo legislativo e portais oficiais.</p>
+        </div>
+        <div class="method-image"><img src="assets/page-42.jpg" alt="Página final com fontes sugeridas para conferência" loading="lazy" width="1240" height="1754" /></div>
+      </div>
+    </section>
+
+    <section class="section offer" id="oferta">
+      <div class="shell offer-grid">
+        <div class="offer-copy">
+          <div class="eyebrow">Acesso ao material completo</div>
+          <h2>Tenha um mapa para pensar antes de responder.</h2>
+          <p>São 42 páginas em formato digital, construídas para consulta rápida e leitura visual. Você pode voltar aos capítulos sempre que precisar revisar um conceito, uma fonte ou uma forma de estruturar a resposta.</p>
+          <p class="micro">Nenhum material de argumentação substitui a leitura das fontes originais. O próprio guia recomenda verificar a edição mais recente dos dados antes de citar.</p>
+        </div>
+        <div class="offer-box">
+          <img class="cover-mini" src="assets/capa-ebook.png" alt="Capa do guia" width="1024" height="1536" loading="lazy" />
+          <h3>O Guia Definitivo de Argumentação Política</h3>
+          <ul class="include">
+            <li>42 páginas em formato digital</li>
+            <li>6 blocos de conteúdo prático</li>
+            <li>Exemplos visuais de falácias e evidências</li>
+            <li>Método PONTE para organizar respostas</li>
+            <li>Referências para conferência de dados</li>
+          </ul>
+          <div class="price-pending">Valor da oferta e link de checkout ainda não foram informados.</div>
+          <button class="button js-checkout" type="button" disabled>Inserir checkout para publicar</button>
+          <div class="pending-note">Pendência de publicação: preço, meio de pagamento, forma de acesso e URL do checkout.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="shell faq-wrap">
+        <div class="section-head">
+          <div class="eyebrow">Perguntas frequentes</div>
+          <h2>Antes de acessar.</h2>
+        </div>
+        <div class="faq-item open">
+          <button class="faq-button" type="button" aria-expanded="true"><span>O material tenta me ensinar o que pensar politicamente?</span><span>+</span></button>
+          <div class="faq-answer"><div><p>O guia declara uma abordagem conservadora, mas enfatiza método, fonte, responsabilidade e honestidade intelectual. A proposta apresentada no próprio material é organizar a qualidade da argumentação, não substituir pesquisa nem transformar discordância em hostilidade.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-button" type="button" aria-expanded="false"><span>Preciso entender de economia, direito ou estatística?</span><span>+</span></button>
+          <div class="faq-answer"><div><p>Não. O conteúdo apresenta conceitos de forma visual e introdutória, com perguntas práticas para ajudar na leitura de indicadores, competências institucionais, evidências e conclusões.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-button" type="button" aria-expanded="false"><span>O guia traz respostas prontas para debates?</span><span>+</span></button>
+          <div class="faq-answer"><div><p>Ele traz modelos de perguntas, scripts e formas de organizar uma resposta, mas também reforça que é preciso checar a fonte e o contexto antes de concluir.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-button" type="button" aria-expanded="false"><span>Em qual formato recebo o material?</span><span>+</span></button>
+          <div class="faq-answer"><div><p>O arquivo fornecido para criação desta página é um PDF digital. A forma exata de entrega ao comprador ainda precisa ser confirmada antes da publicação da oferta.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-button" type="button" aria-expanded="false"><span>Existe garantia?</span><span>+</span></button>
+          <div class="faq-answer"><div><p>A condição de garantia não foi informada. Por isso, esta página não apresenta prazo ou promessa de reembolso que não esteja confirmada.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <div><strong>O Guia Definitivo de Argumentação Política</strong><div class="micro">Material digital de caráter educacional.</div></div>
+      <p class="legal">Esta página descreve o conteúdo do produto fornecido. Antes da publicação comercial, confirme preço, checkout, política de garantia, forma de entrega e dados do responsável pela oferta. O conteúdo não substitui consulta às fontes originais e atualizadas.</p>
+    </div>
+  </footer>
+
+  <div class="sticky" aria-label="Ação de compra fixa no celular"><a class="button js-buy" href="#oferta">Quero acessar o guia</a></div>
+
+  <script>
+    const CHECKOUT_URL = ""; // Inserir URL real antes de publicar.
+
+    const allowedParams = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","fbclid"];
+    function checkoutWithParams(target){
+      if(!target) return "";
+      try{
+        const URLCtor = window.URL;
+        const out = new URLCtor(target, window.location.href);
+        const current = new URLSearchParams(window.location.search);
+        allowedParams.forEach(key => { if(current.has(key)) out.searchParams.set(key, current.get(key)); });
+        return out.toString();
+      }catch(e){ return target; }
+    }
+
+    document.querySelectorAll('.js-buy').forEach(link => {
+      link.addEventListener('click', () => {
+        if(CHECKOUT_URL){ link.href = checkoutWithParams(CHECKOUT_URL); }
+      });
+    });
+
+    document.querySelectorAll('.js-checkout').forEach(link => {
+      if(CHECKOUT_URL){
+        const target = checkoutWithParams(CHECKOUT_URL);
+        const anchor = document.createElement('a');
+        anchor.className = link.className;
+        anchor.href = target;
+        anchor.textContent = 'Quero acessar o guia';
+        link.replaceWith(anchor);
+      }
+    });
+
+    document.querySelectorAll('.faq-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const open = item.classList.toggle('open');
+        button.setAttribute('aria-expanded', String(open));
+      });
+    });
+  </script>
+</body>
+</html>
