@@ -273,8 +273,8 @@
           <h3>O Guia Definitivo de Argumentação Política</h3>
           <ul class="include"><li>42 páginas em formato digital</li><li>6 blocos de conteúdo prático</li><li>Exemplos visuais de falácias e evidências</li><li>Método PONTE para organizar respostas</li><li>Referências para conferência de dados</li></ul>
           <div class="price-pending">Valor da oferta e link de checkout ainda não foram informados.</div>
-          <button class="button js-checkout" type="button" disabled>Inserir checkout para publicar</button>
-          <div class="pending-note">Pendência de publicação: preço, meio de pagamento, forma de acesso e URL do checkout.</div>
+          <a class="button js-checkout" href="https://pay.kiwify.com.br/s1vd3TI">Quero acessar o guia</a>
+          <div class="pending-note">Pendência de publicação: confirmar preço, meio de pagamento e forma de acesso.</div>
         </div>
       </div>
     </section>
@@ -293,11 +293,11 @@
   <footer><div class="shell"><div><strong>O Guia Definitivo de Argumentação Política</strong><div class="micro">Material digital de caráter educacional.</div></div><p class="legal">Esta página descreve o conteúdo do produto fornecido. Antes da publicação comercial, confirme preço, checkout, política de garantia, forma de entrega e dados do responsável pela oferta. O conteúdo não substitui consulta às fontes originais e atualizadas.</p></div></footer>
   <div class="sticky"><a class="button js-buy" href="#oferta">Quero acessar o guia</a></div>
   <script>
-    const CHECKOUT_URL = "";
+    const CHECKOUT_URL = "https://pay.kiwify.com.br/s1vd3TI";
     const allowedParams=["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","fbclid"];
     function checkoutWithParams(target){if(!target)return"";try{const out=new URL(target,window.location.href);const current=new URLSearchParams(window.location.search);allowedParams.forEach(k=>{if(current.has(k))out.searchParams.set(k,current.get(k))});return out.toString()}catch(e){return target}}
-    document.querySelectorAll('.js-buy').forEach(link=>{link.addEventListener('click',()=>{if(CHECKOUT_URL)link.href=checkoutWithParams(CHECKOUT_URL)})});
-    document.querySelectorAll('.js-checkout').forEach(button=>{if(CHECKOUT_URL){const a=document.createElement('a');a.className=button.className;a.href=checkoutWithParams(CHECKOUT_URL);a.textContent='Quero acessar o guia';button.replaceWith(a)}});
+    document.querySelectorAll('.js-buy').forEach(link=>{link.setAttribute('href','#oferta')});
+    document.querySelectorAll('.js-checkout').forEach(link=>{if(CHECKOUT_URL)link.href=checkoutWithParams(CHECKOUT_URL)});
     document.querySelectorAll('.faq-button').forEach(button=>{button.addEventListener('click',()=>{const item=button.closest('.faq-item');const open=item.classList.toggle('open');button.setAttribute('aria-expanded',String(open))})});
     const hero=document.querySelector('.hero'); if(hero && 'IntersectionObserver' in window){const io=new IntersectionObserver(([entry])=>document.body.classList.toggle('show-sticky',!entry.isIntersecting),{threshold:.08});io.observe(hero);}
   </script>
